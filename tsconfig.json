@@ -16,8 +16,10 @@
     "incremental": true,
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    "typeRoots": ["./global.d.ts", "./src/types", "./node_modules/@types"],
+    "types": ["jest"]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.test.ts", "**/*.test.tsx"],
   "exclude": ["node_modules"]
 }

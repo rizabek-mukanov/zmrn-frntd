@@ -1,3 +1,47 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    "airbnb",
+    "next/core-web-vitals",
+    "plugin:tailwindcss/recommended",
+    "prettier",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["prettier", "tailwindcss", "@typescript-eslint"],
+  "rules": {
+    "import/no-cycle": [2, { "ignoreExternal": true, "maxDepth": 1 }],
+    "react/jsx-props-no-spreading": [2, { "exceptions": ["Component"] }],
+    "import/extensions": 0,
+    "no-undef": 0,
+    "import/prefer-default-export": 0,
+    "react/function-component-definition": 0,
+    "react/jsx-filename-extension": [1, { "extensions": [".tsx"] }],
+    "react/react-in-jsx-scope": "off",
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "varsIgnorePattern": "^(_)",
+        "argsIgnorePattern": "^(_)",
+        "destructuredArrayIgnorePattern": "^(_)"
+      }
+    ],
+    "tailwindcss/no-custom-classname": [
+      "error",
+      {
+        "config": "tailwind.config.js",
+        "cssFiles": [
+          "!**/*.module.css",
+          "**/*.css",
+          "!**/node_modules",
+          "!**/.*",
+          "!**/dist",
+          "!**/build"
+        ],
+        "cssFilesRefreshRate": 5000,
+        "tags": []
+      }
+    ]
+  }
 }
