@@ -14,7 +14,9 @@ import {
   Messages,
 } from '@/components';
 
-const socket = io('http://localhost:49160/');
+const url = process.env.PROD_URL as string;
+
+const socket = io(url);
 
 export default function Home() {
   const [messages, setMessages] = useState<Message[] | []>([]);
